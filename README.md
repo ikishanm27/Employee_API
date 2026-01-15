@@ -46,7 +46,7 @@ A RESTful API built with FastAPI for managing employee records and user authenti
 4. **Run the Server**
    Navigate to the project root and run:
    ```bash
-   uvicorn app.main:app --reload
+   uvicorn main:app --reload
    ```
    *(Note: Ensure you have a `main.py` that initializes the FastAPI app and includes the routers)*
 
