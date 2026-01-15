@@ -4,9 +4,15 @@ from app.db import Base, engine
 from app.routers.user import user
 
 
-Base.metadata.create_all(bind=engine)
 
-app=FastAPI()
+
+app = FastAPI(title="Employee API")
+
+
+@app.on_event("startup")
+def on_startup():
+    Base.metadata.create_all(bind=engine)
+
 
 app.include_router(user)
 app.include_router(router)
